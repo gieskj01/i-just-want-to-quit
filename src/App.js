@@ -1,14 +1,13 @@
 import "./App.css";
-import FinalPage from "./FinalPage/FinalPage";
+import Puzzle001 from "./Puzzle001/Puzzle001";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         {" "}
-        <FinalPage />
+        <Puzzle001 />
       </header>
-      <body></body>
     </div>
   );
 }
