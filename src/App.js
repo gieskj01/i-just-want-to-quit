@@ -1,14 +1,13 @@
 import "./App.css";
-import FirstButton from "./FirstButton/FirstButton";
+import Puzzle001 from "./Puzzle001/Puzzle001";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         {" "}
-        <FirstButton />
+        <Puzzle001 />
       </header>
-      <body></body>
     </div>
   );
 }
