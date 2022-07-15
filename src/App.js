@@ -1,12 +1,12 @@
 import "./App.css";
-import FirstButton from "./FirstButton/FirstButton";
+import FinalPage from "./FinalPage/FinalPage";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         {" "}
-        <FirstButton />
+        <FinalPage />
       </header>
       <body></body>
     </div>
