@@ -6,6 +6,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
 
 export default function FirstButton() {
   const [buttonCount, setbuttonCount] = useState(0);
@@ -20,10 +21,6 @@ export default function FirstButton() {
   const buttonCounter = () => {
     setbuttonCount(buttonCount + 1);
     return console.log(buttonCount);
-  };
-
-  const dialogAction = () => {
-    console.log("ActionClicked");
   };
 
   return (
@@ -43,8 +40,8 @@ export default function FirstButton() {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={dialogAction}>Quit</Button>
-            <Button onClick={dialogAction} autoFocus>
+            <Button component={ Link } to="/puzzle002">Quit</Button>
+            <Button component={ Link } to="/finalpage" autoFocus>
               Cancel
             </Button>
           </DialogActions>
