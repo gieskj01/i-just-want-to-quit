@@ -17,7 +17,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 const theme = createTheme({
   palette: {
     background: {
-      default: "#222222",
+      default: "#000000",
     },
     mode: "dark",
   },
