@@ -179,7 +179,7 @@ export default function TransferList() {
     </Grid>
     <Button 
     sx={{ m: 2}}
-    disabled={right.length != 4}
+    disabled={right.length !== 4}
     component={Link} to="/finalpage"
     >
         Quit for Realsies

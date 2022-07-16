@@ -7,6 +7,8 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
+import { Grid } from "@mui/material";
+import { Box } from "@mui/system";
 
 export default function FirstButton() {
   const [buttonCount, setbuttonCount] = useState(0);
@@ -52,7 +54,8 @@ export default function FirstButton() {
         break;
 
       default:
-        message = "That button below ↓↓ that says QUIT... you should probably click it.";
+        message =
+          "That button below ↓↓ that says QUIT... you should probably click it.";
         break;
     }
 
@@ -62,6 +65,8 @@ export default function FirstButton() {
   return (
     <>
       <Dialog
+        fullWidth
+        minWidth={256}
         open={dialogToggle}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
@@ -76,19 +81,31 @@ export default function FirstButton() {
         </DialogContent>
         <DialogActions>
           <Button component={Link} to="/puzzle002">
-            Quit
+            Really Quit
           </Button>
           <Button onClick={handleDialog} autoFocus>
             Cancel
           </Button>
         </DialogActions>
       </Dialog>
+      <Grid
+        container
+        spacing={2}
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Typography variant="h4">I Just Want To</Typography>
+        <Box
+         margin={2}
+        >
+        <Button onClick={buttonCounter} size="large" variant="contained">
+          Quit
+        </Button>
+        </Box>
+      </Grid>
 
-      <Button onClick={buttonCounter} variant="contained">
-        Quit
-      </Button>
-
-      <Typography>{`ver00.${version}`}</Typography>
+      <Typography variant="caption">{`ver00.${version}`}</Typography>
     </>
   );
 }
