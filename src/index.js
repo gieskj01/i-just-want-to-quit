@@ -9,6 +9,7 @@ import "@fontsource/roboto/700.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FinalPage from "./routes/FinalPage/FinalPage";
 import Puzzle002 from "./routes/Puzzle002/Puzzle002";
+import Puzzle003 from "./routes/Puzzle003/Puzzle003";
 import { ThemeProvider, createTheme } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 
@@ -31,6 +32,7 @@ root.render(
         <Route path="/" element={<App />} />
         <Route path="finalpage" element={<FinalPage />} />
         <Route path="puzzle002" element={<Puzzle002 />} />
+        <Route path="puzzle003" element={<Puzzle003 />} />
       </Routes>
     </ThemeProvider>
   </BrowserRouter>

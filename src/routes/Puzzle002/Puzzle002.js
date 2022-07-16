@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
 
 export default function Puzzle002() {
   const [text, setText] = useState('');
@@ -39,7 +40,7 @@ export default function Puzzle002() {
           variant="outlined"
         />
         <Button
-        disabled={!valid}
+        disabled={!valid} component={ Link } to="/puzzle003"
         >Save & Quit</Button>
       </Grid>
     </Box>
