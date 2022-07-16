@@ -1,5 +1,5 @@
 import "./App.css";
-import Puzzle001 from "./Puzzle001/Puzzle001";
+import Puzzle001 from "./Puzzle001/Puzzle001"
 
 function App() {
   return (
