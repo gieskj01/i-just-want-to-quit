@@ -10,6 +10,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FinalPage from "./routes/FinalPage/FinalPage";
 import Puzzle002 from "./routes/Puzzle002/Puzzle002";
 import { ThemeProvider, createTheme } from "@mui/material";
+import CssBaseline from "@mui/material/CssBaseline";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -18,12 +19,14 @@ const theme = createTheme({
     background: {
       default: "#222222",
     },
+    mode: "dark",
   },
 });
 
 root.render(
   <BrowserRouter>
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="finalpage" element={<FinalPage />} />
