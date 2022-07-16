@@ -9,6 +9,9 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
+import { Box } from '@mui/material';
+import { Link } from "react-router-dom";
+import { Typography } from "@mui/material";
 
 function not(a, b) {
   return a.filter((value) => b.indexOf(value) === -1);
@@ -24,8 +27,19 @@ function union(a, b) {
 
 export default function TransferList() {
   const [checked, setChecked] = React.useState([]);
-  const [left, setLeft] = React.useState([0, 1, 2, 3]);
-  const [right, setRight] = React.useState([4, 5, 6, 7]);
+  const [left, setLeft] = React.useState([
+    "The documentation and help were not satisfactory.",
+    "Too expensive.",
+    "Too cheap.",
+    "Not enough cake supplied.",
+    "Too difficult to close the Application.",
+    "Forsooth, the nearby boars grunted too loudly and frequently.",
+    "I never asked for this.",
+    "I have decided to abandon society and become a hermit.",
+    "[ERROR_04] <system-string-parse-failed> Please refer to..."
+
+  ]);
+  const [right, setRight] = React.useState([]);
 
   const leftChecked = intersection(checked, left);
   const rightChecked = intersection(checked, right);
@@ -88,12 +102,12 @@ export default function TransferList() {
       <Divider />
       <List
         sx={{
-          width: 400,
+          width: 500,
           height: 500,
           bgcolor: 'background.paper',
           overflow: 'auto',
         }}
-        // dense
+        dense
         component="div"
         role="list"
       >
@@ -117,7 +131,7 @@ export default function TransferList() {
                   }}
                 />
               </ListItemIcon>
-              <ListItemText id={labelId} primary={`List item ${value + 2}`} />
+              <ListItemText id={labelId} primary={`${value}`} />
             </ListItem>
           );
         })}
@@ -127,8 +141,16 @@ export default function TransferList() {
   );
 
   return (
+    <Box
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    // minHeight="100vh"
+    sx={{m: 2, flexDirection: "column" }}
+    >
+    <Typography gutterBottom variant={"h3"}> We're Sorry to See You Go </Typography>
     <Grid container spacing={2} justifyContent="center" alignItems="center">
-      <Grid item>{customList('Choices', left)}</Grid>
+      <Grid item>{customList('Please Select Why You Are Leaving', left)}</Grid>
       <Grid item>
         <Grid container direction="column" alignItems="center">
           <Button
@@ -151,12 +173,17 @@ export default function TransferList() {
           >
             &lt;
           </Button>
-          <Button >
-        Okay
-      </Button>
         </Grid>
       </Grid>
-      <Grid item>{customList('Chosen', right)}</Grid>
+      <Grid item>{customList('Excuses', right)}</Grid>
     </Grid>
+    <Button 
+    sx={{ m: 2}}
+    disabled={right.length != 4}
+    component={Link} to="/finalpage"
+    >
+        Quit for Realsies
+    </Button>
+    </Box>
   );
 }
