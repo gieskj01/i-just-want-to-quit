@@ -1,36 +1,46 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
 export default function Puzzle002() {
-  const [formIsValid,setFormIsValid] = useState(false);
+  const [text, setText] = useState('');
+  const [valid, setValid] = useState(false);
+
+  useEffect(() => {
+    if (text === 'Answer') {
+      setValid(true);
+    } else {setValid(false)}
+  }, [text]);
 
   return (
     <Box
       sx={{
-        "& .MuiTextField-root": { m: 2, width: "25ch" },
+        "& .MuiTextField-root": { m: 1, width: "25ch" },
       }}
     >
       <Grid
         container
         direction="column"
-        justifyContent="flex-end"
+        justifyContent="center"
         alignItems="center"
       >
+        <p>The Answer is Your Clue</p>
         <TextField
-          // error
-          helperText="Enter the correct name."
+          autoComplete="off"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          error={!valid}
+          // label={!valid ? 'Wrong' : ''}
+          // helperText={valid ? 'Incorrect entry.' : 'Yo'}
           id="SaveName"
-          defaultValue="?"
+          placeholder="Name?"
+          variant="outlined"
         />
         <Button
-         type="submit" 
-        //  disabled={!formIsValid()}
-         >
-          Save & Quit
-        </Button>
+        disabled={!valid}
+        >Save & Quit</Button>
       </Grid>
     </Box>
   );
