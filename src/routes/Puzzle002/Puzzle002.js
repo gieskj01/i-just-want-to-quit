@@ -20,7 +20,7 @@ export default function Puzzle002() {
         alignItems="center"
       >
         <TextField
-          // error
+          error
           helperText="Enter the correct name."
           id="SaveName"
           defaultValue="?"

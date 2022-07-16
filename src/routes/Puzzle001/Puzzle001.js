@@ -20,7 +20,6 @@ export default function FirstButton() {
 
   const buttonCounter = () => {
     setbuttonCount(buttonCount + 1);
-    return console.log(buttonCount);
   };
 
   return (
