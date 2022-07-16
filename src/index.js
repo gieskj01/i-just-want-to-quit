@@ -8,6 +8,7 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FinalPage from "./routes/FinalPage/FinalPage"
+import Puzzle002 from "./routes/Puzzle002/Puzzle002"
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -15,7 +16,7 @@ root.render(
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="finalpage" element={<FinalPage />} />
-      {/* <Route path="invoices" element={<Invoices />} /> */}
+      <Route path="puzzle002" element={<Puzzle002 />} />
     </Routes>
   </BrowserRouter>
 );
