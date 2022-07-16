@@ -7,16 +7,31 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import FinalPage from "./routes/FinalPage/FinalPage"
-import Puzzle002 from "./routes/Puzzle002/Puzzle002"
+import FinalPage from "./routes/FinalPage/FinalPage";
+import Puzzle002 from "./routes/Puzzle002/Puzzle002";
+import { ThemeProvider, createTheme } from "@mui/material";
+import CssBaseline from "@mui/material/CssBaseline";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
+const theme = createTheme({
+  palette: {
+    background: {
+      default: "#000000",
+    },
+    mode: "dark",
+  },
+});
+
 root.render(
   <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="finalpage" element={<FinalPage />} />
-      <Route path="puzzle002" element={<Puzzle002 />} />
-    </Routes>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="finalpage" element={<FinalPage />} />
+        <Route path="puzzle002" element={<Puzzle002 />} />
+      </Routes>
+    </ThemeProvider>
   </BrowserRouter>
 );
